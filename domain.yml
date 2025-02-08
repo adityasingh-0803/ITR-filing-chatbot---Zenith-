@@ -1,0 +1,31 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_itr_form
+  - provide_income_salary
+  - provide_income_business
+  - provide_income_rental
+  - ask_investment_advice
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm your tax advisory assistant. How can I help you today?"
+      buttons:
+        - title: "Help me choose an ITR form"
+        - title: "Suggest tax-saving investments"
+
+  utter_ask_income_type:
+    - text: "To recommend the right ITR form, I need to know about your income sources. What type of income do you have?"
+      buttons:
+        - title: "I have salary income"
+        - title: "I have business income"
+        - title: "I have rental income"
+
+actions:
+  - action_recommend_itr_form
+  - action_suggest_investments
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
